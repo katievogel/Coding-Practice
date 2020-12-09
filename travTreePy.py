@@ -50,10 +50,11 @@ root.left.right = Node(5)
 root.left.right.left = Node('a')
 root.left.right.left.right = Node('b')
 
-#print (inOrder(root))
+print (inOrder(root))
 #4 2 a b 5 1 3
-#print (preOrder(root))
+print (preOrder(root))
 #1 2 4 5 a b 3
-#print (postOrder(root))
+print (postOrder(root))
 #4 b a 5 2 3 1
 print (levelOrder(root))
+#1 2 3 4 5 a b
