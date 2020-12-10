@@ -129,6 +129,10 @@ var tree2 = {
 }
 
 function invert(tree2){
+    //accounts for when a null root is passed in based on problem i did in leetcode
+    if (tree2 === null){
+        return tree2
+    }
     //let [val, left, right] = tree2;
     let {val, left, right} = tree2;
     left = left !== null ? invert(left) : null;
