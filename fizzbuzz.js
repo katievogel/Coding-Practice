@@ -202,30 +202,3 @@ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 
 // console.log(notFizzOrBuzz(arr));
 
-nums = [1, 2, 3, 4]
-partArr = []
-decompArr = [];
-var partition = function (nums) {
-
-    var acc = nums.reduce(function (acc, val, idx, nums) {
-        if (idx % 2 === 0)
-            acc.push(nums.slice(idx, idx + 2));
-        return acc;
-    }, [])
-    return acc
-};
-console.log(partition(nums))
-
-var decompressedList = function (nums) {
-    var partArr = partition(nums);
-    console.log(partArr)
-    for (var i = 0; i < partArr.length; i++) {
-        let [freq, val] = partArr[i];
-        console.log("f", freq, "v", val);
-        temp = Array(freq).fill(val);
-        decompArr = decompArr.concat(temp);
-    }
-    return decompArr;
-}
-
-console.log(decompressedList(nums))
