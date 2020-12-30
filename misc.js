@@ -63,24 +63,60 @@
 //     return count;
 // };
 //var s = "RLRRLLRLRL"
-var s = "RLLLLRRRLR"
+// var s = "RLLLLRRRLR"
 
-var balancedStringSplit = function (s) {
-    var string = s.split("");
-    console.log(string);
-    let count = string.reduce((acc2, val) => {
-        let [acc, bal] = acc2
-        if (val === 'R') {
-            acc += 1
-        } else if (val === 'L') {
-            acc -= 1
-        }
-        if (acc === 0) {
-            bal++
-        } 
-        return [acc, bal];
-    }, [0, 0])
-    return count[1]
-};
-console.log(balancedStringSplit(s));
+// var balancedStringSplit = function (s) {
+//     var string = s.split("");
+//     console.log(string);
+//     let count = string.reduce((acc2, val) => {
+//         let [acc, bal] = acc2
+//         if (val === 'R') {
+//             acc += 1
+//         } else if (val === 'L') {
+//             acc -= 1
+//         }
+//         if (acc === 0) {
+//             bal++
+//         } 
+//         return [acc, bal];
+//     }, [0, 0])
+//     return count[1]
+// };
+// console.log(balancedStringSplit(s));
 
+//swapping pairs in a linked list, taken from leetcode. https://leetcode.com/explore/challenge/card/december-leetcoding-challenge/572/week-4-december-22nd-december-28th/3579/
+
+// Definition for singly-linked list.
+ // function ListNode(val, next) {
+ //      this.val = (val===undefined ? 0 : val)
+ //     this.next = (next===undefined ? null : next)
+ // }
+
+/**
+//  * @param {ListNode} head
+//  * @return {ListNode}
+//  */
+// var swapPairs = function(head) {
+//     var curr = head;
+//     while (curr && curr.next !== null) {
+//         var prev = curr.val;
+//         curr.val = curr.next.val;
+//         curr.next.val = prev;
+//         curr = curr.next.next;
+//         }
+//     return head;
+// };
+//
+//below is not my solution but I liked it, so I am including it to review/reference it later since I don't have much experience with linked lists yet
+
+// var swapPairs = function(head) {
+//     if (!head || !head.next) return head;
+   
+//    let firstNode = head;
+//    let secondNode = head.next;
+   
+//    firstNode.next = swapPairs(secondNode.next);
+//    secondNode.next = head;
+   
+//    return secondNode;
+//  };
