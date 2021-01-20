@@ -87,10 +87,10 @@
 //swapping pairs in a linked list, taken from leetcode. https://leetcode.com/explore/challenge/card/december-leetcoding-challenge/572/week-4-december-22nd-december-28th/3579/
 
 // Definition for singly-linked list.
- // function ListNode(val, next) {
- //      this.val = (val===undefined ? 0 : val)
- //     this.next = (next===undefined ? null : next)
- // }
+// function ListNode(val, next) {
+//      this.val = (val===undefined ? 0 : val)
+//     this.next = (next===undefined ? null : next)
+// }
 
 /**
 //  * @param {ListNode} head
@@ -111,12 +111,83 @@
 
 // var swapPairs = function(head) {
 //     if (!head || !head.next) return head;
-   
+
 //    let firstNode = head;
 //    let secondNode = head.next;
-   
+
 //    firstNode.next = swapPairs(secondNode.next);
 //    secondNode.next = head;
-   
+
 //    return secondNode;
 //  };
+
+//Return an array of two integers that when added together equal 'n' and also do not contain a 0 anywhere in the number, ex. n=10, [1, 9] are good, n=100 [10, 90] are bad but [9, 91] are good.
+
+//below is my answer
+// var getNoZeroIntegers = function (n) {
+//     for (var i = 1; i < n; i++) {
+//         var noZeroInts = [];
+//         var zeroCheck = RegExp('0');
+//         var a = i;
+//         var b = n - i;
+//         if ((zeroCheck.test(a.toString()) === true) ||
+//             (zeroCheck.test(b.toString()) === true)) {
+//         } else if ((zeroCheck.test(a.toString()) === false) &&
+//             (zeroCheck.test(b.toString()) === false) &&
+//             (a + b === n)) {
+//             noZeroInts.push(a, b);
+//             return noZeroInts;
+//         }
+//     }
+// };
+
+// console.log(getNoZeroIntegers(210));
+
+//this one is not my answer, but i liked the minimal amount of code so ive copied it for reference to study later. I want to compare it to my to my stuff more 'sleek' like this. 
+// var getNoZeroIntegers = function(n) {
+//     for (let i = 1; i < n; i++) {
+//         if (i.toString().includes("0") || (n - i).toString().includes("0")) {
+//             continue;
+//         }
+//         return [i, n - i];
+//     }
+// };
+
+
+//Say you have an array for which the ith element is the price of a given stock on day i.
+// If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+// Note that you cannot sell a stock before you buy one.
+// Example 1:
+// Input: [7,1,5,3,6,4]
+// Output: 5
+// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+//              Not 7-1 = 6, as selling price needs to be larger than buying price.
+
+//my solution, though it is slow
+// var maxProfit = function(prices) {
+//     var maxP = 0;
+//     for (var i = 0; i < prices.length; i++){
+//         for (var j = i+1; j < prices.length; j++){
+//             if ((prices[j] - prices[i]) > maxP){
+//                 maxP = prices[j]-prices[i]
+//             } 
+//         }
+//     }
+//     return maxP;
+// };
+
+// console.log(maxProfit([7,1,5,3,6,4]))
+
+//referencing a better answer user Math.max and Math.min. 
+// var maxProfit = function(prices) {
+//     let maxP = 0;
+//     let buyPrice = prices[0];
+//     for(let i = 1; i < prices.length; i++) {
+//         let sellPrice = prices[i];
+//         maxP = Math.max(maxP, sellPrice - buyPrice);
+//         // this is the next day buy price
+//         buyPrice = Math.min(buyPrice, sellPrice);
+//     }
+
+//     return maxP;
+// };

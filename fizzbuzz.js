@@ -202,3 +202,14 @@ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 
 // console.log(notFizzOrBuzz(arr));
 
+//fizzbuzz if you are only given an integer and have to create the array yourself. 
+//var fizzBuzz10 = function(n) {
+//     var arr = [];
+//     for (var j=1; j<=n; j++){
+//         var f = j%3===0;
+//         var b = j%5===0;
+//         arr.push((f ? b ? "FizzBuzz": "Fizz" : b ? "Buzz": ""+j));
+//         }
+//     return arr
+// };
+
