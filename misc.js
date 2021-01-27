@@ -191,3 +191,22 @@
 
 //     return maxP;
 // };
+
+//Reverse an array in place, as in do not create a new array, only modify the existing one
+//I initially wrote the following:
+//var reverseString = function(s) {
+//     s.reverse()
+//  };
+//Honestly it works just fine. I wanted a different way to do it but even when I googled it I just kept coming across this same one. 
+//The one below is from a submission from someone else. Not all that much faster than reverse() but I liked it b/c it was different. One of the few 'while' loop uses I've come across. 
+// var reverseString = function(s) {
+//     let start = 0
+//     let end = s.length - 1
+    
+//     while (start < end) {
+//         [s[start], s[end]] = [s[end], s[start]] //looks at the start and end and then swaps them
+//         start += 1 // then it moves inwards to the next letter
+//         end -= 1
+//     }
+    
+// };
