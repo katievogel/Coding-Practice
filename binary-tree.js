@@ -248,3 +248,26 @@
 //         treeEquals(a.left, b.left) &&
 //         treeEquals(a.right, b.right);
 // };
+//
+//
+//
+//Finding the max depth of a binary tree. This one is bootstrapped by created a function that handles the depth traversing recursion and then that is called in the first function. Researched this solution but it helps to understand binary trees and how to use recursion.
+// var maxDepth = function(root) {
+//     return depthHandler(root, 1)
+//  };
+ 
+//  var depthHandler = function (root, num){
+//       if (root === 0) {
+//          return 0;
+//      }
+//      if (root.left === null && root.right === null){
+//          return num;
+//      }
+//      if (root.left && root.right) {
+//          return Math.max(depthHandler(root.left, num+1), depthHandler(root.right, num+1))
+//      } else if (root.left !== null) {
+//          return depthHandler(root.left, num+1)
+//      } else {
+//          return depthHandler(root.right, num+1)
+//      }
+//  }
